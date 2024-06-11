@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture 1</title>
+  </head>
+  <body>
+    <h1>This is the first heading</h1>
+    <h2>This is h2 title</h2>
+    <h3>This is h3 title</h3>
+    <h4>titles are for the paragraphs</h4>
+
+    <p title="im paragraph">This is the first paragraph</p>
+    <p title="im paragraph">This is the second paragraph</p>
+    <p title="im paragraph">This is the third paragraph</p>
+
+    <h1>Lists, Buttons and Images</h1>
+    <ol>
+      <li>list item1</li>
+      <li>list item2</li>
+      <li>list item2</li>
+    </ol>
+    <button>click me</button>
+    <img
+      src="https://source.unsplash.com/random?wallpapers"
+      height="50"
+      width="50"
+      alt="Dinosaur"
+    />
+
+    <h1>input fields</h1>
+    <form action="/index.html" method="get">
+      <input
+        type="text"
+        placeholder="First Name"
+        autocomplete="on"
+      /><br /><br />
+      <input type="text" placeholder="Last Name" autocomplete="on" /><br />
+      <br />
+      <input type="text" placeholder="Email" autocomplete="off" /><br />
+
+      <button type="submit">submit</button>
+    </form>
+
+    <h1>HTML Geolocation</h1>
+    <p>Click the button to get your coordinates.</p>
+
+    <button onclick="getLocation()">Try It</button>
+
+    <p id="demo"></p>
+
+    <script>
+      const x = document.getElementById("demo");
+
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+
+      function showPosition(position) {
+        x.innerHTML =
+          "Latitude: " +
+          position.coords.latitude +
+          "<br>Longitude: " +
+          position.coords.longitude;
+      }
+    </script>
+  </body>
+</html>
